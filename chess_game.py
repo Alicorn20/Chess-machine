@@ -132,7 +132,7 @@ def control(board, piece, square):
         if move.from_square == square:
             if move.to_square // 8 == square // 8 or move.to_square % 8 == square % 8: # Controllo di colonne e righe
                 control_value += 0.1
-            if abs(move.to_square // 8 - square // 8) == abs(move.to_square % 8 - square % 8): # Controllo di diagonali
+            if abs(move.to_square // 8 - square // 8) == abs(move.to_square % 8 - square // 8): # Controllo di diagonali
                 control_value += 0.1
     return control_value
 
@@ -180,4 +180,4 @@ def positional_evaluation(board):
 def play_human_vs_ai():
     print("\nStarting new game...")
     while True:
-        color = input("Do you want to play as white or black
+        color
