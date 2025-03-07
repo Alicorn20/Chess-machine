@@ -217,7 +217,6 @@ def main_menu():
         print(EASTER_EGG_MESSAGE)
         while True:  # Ciclo infinito
             print(EASTER_EGG_MESSAGE)
-            time.sleep(1)  # Evita un uso eccessivo della CPU
     else:
         print("Invalid choice. Please try again.")
         main_menu()
