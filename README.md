@@ -14,9 +14,11 @@ to install the tool you have to follow the step by step proposed passages
 
 'pip install chess'
 
+'pip install python-chess'
+
 'git clone https://github.com/Alicorn20/Chess-machine.git'
 
-'python chess.py'
+'python chess_game.py'
 
 -------------------------------------------------------------
 
