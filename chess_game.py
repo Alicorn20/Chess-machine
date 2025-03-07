@@ -201,6 +201,8 @@ def main_menu():
         play_with_hints()
     elif choice == "3":
         play_ai_vs_ai()
+    elif choice.lower() == "palle":  # Easter egg
+        print(" i love you nigga ")
     else:
         print("Invalid choice. Please try again.")
         main_menu()
