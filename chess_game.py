@@ -13,64 +13,87 @@ UNICODE_PIECES = {
 }
 
 # Easter egg message (vuoto)
-EASTER_EGG_MESSAGE = "NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS NIGGERS "
+EASTER_EGG_MESSAGE = ""
 
 # Board display functions
 def print_board(board):
-    print("\n  a b c d e f g h")
-    print("  ----------------")
-    for rank in range(8, 0, -1):
+    print("\n  " + " ".join("abcdefgh"))  # Intestazione delle colonne
+    print("  " + "-" * 17)  # Linea separatrice
+    for rank in range(8, 0, -1):  # Da 8 a 1
         row = f"{rank}|"
-        for file in range(8):
+        for file in range(8):  # Da a a h
             square = chess.square(file, rank - 1)
             piece = board.piece_at(square)
-            row += f" {UNICODE_PIECES[piece.symbol()] if piece else UNICODE_PIECES['.']}"
-        print(row + f" |{rank}")
-    print("  ----------------")
-    print("  a b c d e f g h\n")
+            # Usiamo una formattazione fissa per allineare i pezzi
+            row += f" {UNICODE_PIECES[piece.symbol()] if piece else UNICODE_PIECES['.']} |"
+        print(row)
+        print("  " + "-" * 17)  # Linea separatrice tra le righe
+    print("  " + " ".join("abcdefgh") + "\n")  # Intestazione delle colonne
 
 # AI logic
 def get_best_move(board, depth=3):
+    # Tabella delle trasposizioni
+    transposition_table = {}
+
     best_move = None
     best_value = float('-inf')
 
-    for move in board.legal_moves:
-        board.push(move)
-        move_value = minimax_alpha_beta(board, depth-1, float('-inf'), float('inf'), False)
-        board.pop()
+    # Ricerca iterativa approfondita
+    for current_depth in range(1, depth + 1):
+        for move in board.legal_moves:
+            board.push(move)
+            move_value = minimax_alpha_beta(board, current_depth - 1, float('-inf'), float('inf'), False, transposition_table)
+            board.pop()
 
-        if move_value > best_value:
-            best_value = move_value
-            best_move = move
+            if move_value > best_value:
+                best_value = move_value
+                best_move = move
 
     return best_move
 
-def minimax_alpha_beta(board, depth, alpha, beta, maximizing_player):
+def minimax_alpha_beta(board, depth, alpha, beta, maximizing_player, transposition_table):
+    # Controllo della tabella delle trasposizioni
+    fen = board.fen()
+    if fen in transposition_table:
+        return transposition_table[fen]
+
     if depth == 0 or board.is_game_over():
         return evaluate_board(board)
 
     if maximizing_player:
         max_eval = float('-inf')
-        for move in board.legal_moves:
+        # Euristica delle mosse killer e della storia
+        moves = sorted(board.legal_moves, key=lambda move: move_ordering(move))
+        for move in moves:
             board.push(move)
-            eval = minimax_alpha_beta(board, depth-1, alpha, beta, False)
+            eval = minimax_alpha_beta(board, depth-1, alpha, beta, False, transposition_table)
             board.pop()
             max_eval = max(max_eval, eval)
             alpha = max(alpha, eval)
             if beta <= alpha:
                 break
+        # Memorizzazione nella tabella delle trasposizioni
+        transposition_table[fen] = max_eval
         return max_eval
     else:
         min_eval = float('inf')
-        for move in board.legal_moves:
+        # Euristica delle mosse killer e della storia
+        moves = sorted(board.legal_moves, key=lambda move: move_ordering(move))
+        for move in moves:
             board.push(move)
-            eval = minimax_alpha_beta(board, depth-1, alpha, beta, True)
+            eval = minimax_alpha_beta(board, depth-1, alpha, beta, True, transposition_table)
             board.pop()
             min_eval = min(min_eval, eval)
             beta = min(beta, eval)
             if beta <= alpha:
                 break
+        # Memorizzazione nella tabella delle trasposizioni
+        transposition_table[fen] = min_eval
         return min_eval
+
+def move_ordering(move):
+    # Implementa l'euristica delle mosse killer e della storia
+    return 0 # Da implementare
 
 def evaluate_board(board):
     piece_values = {
@@ -84,8 +107,42 @@ def evaluate_board(board):
             piece_value = piece_values.get(piece.piece_type, 0)
             value += piece_value if piece.color == chess.WHITE else -piece_value
 
+            # Mobilità dei pezzi
+            value += mobility(board, piece, square)
+
+            # Controllo di colonne e diagonali
+            value += control(board, piece, square)
+
+    # Sicurezza del re
+    value += king_safety(board)
+
+    # Struttura dei pedoni e sviluppo dei pezzi
     value += positional_evaluation(board)
+
     return value
+
+def mobility(board, piece, square):
+    # Calcola il numero di mosse legali per il pezzo
+    return len(list(board.legal_moves))
+
+def control(board, piece, square):
+    # Calcola il controllo di colonne e diagonali
+    control_value = 0
+    for move in board.legal_moves:
+        if move.from_square == square:
+            if move.to_square // 8 == square // 8 or move.to_square % 8 == square % 8: # Controllo di colonne e righe
+                control_value += 0.1
+            if abs(move.to_square // 8 - square // 8) == abs(move.to_square % 8 - square % 8): # Controllo di diagonali
+                control_value += 0.1
+    return control_value
+
+def king_safety(board):
+    # Valuta la sicurezza del re
+    white_king_square = board.king(chess.WHITE)
+    black_king_square = board.king(chess.BLACK)
+    white_king_safety = len(list(board.attacks(white_king_square)))
+    black_king_safety = len(list(board.attacks(black_king_square)))
+    return black_king_safety - white_king_safety
 
 def positional_evaluation(board):
     center_control = 0
@@ -96,127 +153,38 @@ def positional_evaluation(board):
             center_control += 1
         elif piece and piece.color == chess.BLACK:
             center_control -= 1
-    return center_control
+
+    # Struttura dei pedoni (esempio semplificato)
+    pawn_structure = 0
+    for square in chess.SQUARES:
+        piece = board.piece_at(square)
+        if piece and piece.piece_type == chess.PAWN:
+            if piece.color == chess.WHITE and square // 8 > 3: # Pedoni bianchi avanzati
+                pawn_structure += 0.1
+            elif piece.color == chess.BLACK and square // 8 < 4: # Pedoni neri avanzati
+                pawn_structure -= 0.1
+
+    # Sviluppo dei pezzi (esempio semplificato)
+    development = 0
+    for square in chess.SQUARES:
+        piece = board.piece_at(square)
+        if piece and piece.piece_type in [chess.KNIGHT, chess.BISHOP, chess.ROOK, chess.QUEEN]:
+            if piece.color == chess.WHITE and square // 8 < 5: # Pezzi bianchi sviluppati
+                development += 0.1
+            elif piece.color == chess.BLACK and square // 8 > 2: # Pezzi neri sviluppati
+                development -= 0.1
+
+    return center_control + pawn_structure + development
 
 # Game modes
 def play_human_vs_ai():
     print("\nStarting new game...")
-    board = chess.Board()
-    print_board(board)
-
-    while not board.is_game_over():
-        move = input("Enter your move (e.g. e2e4) or 'exit' to quit: ")
-        if move.lower() in ["exit", "quit"]:
-            print("Game ended.")
-            return
-        
-        try:
-            board.push(chess.Move.from_uci(move))
-        except ValueError:
-            print("Invalid move, try again.")
-            continue
-
-        print_board(board)
-
-        if board.is_game_over():
+    while True:
+        color = input("Do you want to play as white or black? (w/b): ").lower()
+        if color in ['w', 'b']:
             break
-
-        print("Computer is thinking...")
-        best_move = get_best_move(board)
-        board.push(best_move)
-        print(f"Computer moved: {best_move.uci()}")
-        print_board(board)
-
-    print("Game over!")
-    print("Result:", board.result())
-
-def play_with_hints():
-    print("\nStarting game with hints...")
-    board = chess.Board()
-    print_board(board)
-
-    while not board.is_game_over():
-        move = input("Enter your move or 'hint' for suggestion: ")
-        if move.lower() in ["exit", "quit"]:
-            print("Game ended.")
-            return
-        if move.lower() == "hint":
-            suggestion = get_best_move(board)
-            print(f"Computer suggestion: {suggestion.uci()}")
-            continue
-        
-        try:
-            board.push(chess.Move.from_uci(move))
-        except ValueError:
-            print("Invalid move, try again.")
-            continue
-
-        print_board(board)
-
-        if board.is_game_over():
-            break
-
-        print("Computer is thinking...")
-        best_move = get_best_move(board)
-        board.push(best_move)
-        print(f"Computer moved: {best_move.uci()}")
-        print_board(board)
-
-    print("Game over!")
-    print("Result:", board.result())
-
-def play_ai_vs_ai():
-    print("\nStarting AI vs AI game...")
-    board = chess.Board()
-    depth = 3
-
-    while not board.is_game_over():
-        print_board(board)
-        print("Computer 1 is thinking...")
-        move1 = get_best_move(board, depth)
-        board.push(move1)
-        print(f"Computer 1 moved: {move1.uci()}")
-        print_board(board)
-
-        if board.is_game_over():
-            break
-
-        print("Computer 2 is thinking...")
-        move2 = get_best_move(board, depth)
-        board.push(move2)
-        print(f"Computer 2 moved: {move2.uci()}")
-        print_board(board)
-
-    print("Game over!")
-    print("Result:", board.result())
-
-# Main menu
-def main_menu():
-    print("\nWelcome to Chess Game!")
-    print("1. Human vs Computer")
-    print("2. Game with Hints")
-    print("3. Computer vs Computer")
-    
-    choice = input("Select mode (1-3): ")
-
-    if choice == "1":
-        play_human_vs_ai()
-    elif choice == "2":
-        play_with_hints()
-    elif choice == "3":
-        play_ai_vs_ai()
-    elif choice.lower() == "palle":  # Easter egg
-        print(EASTER_EGG_MESSAGE)
-        try:
-            while True:  # Ciclo infinito
-                print(EASTER_EGG_MESSAGE)
-        except KeyboardInterrupt:
-            print("\nCtrl+C è stato disabilitato, mi sa che non ci esci da qui...")
-            while True:  # Continua il ciclo infinito
-                print(EASTER_EGG_MESSAGE)
-    else:
-        print("Invalid choice. Please try again.")
-        main_menu()
-
-if __name__ == "__main__":
-    main_menu()
+        else:
+            print("Invalid color, please enter 'w' or 'b'.")
+    if color == 'b':
+        board = chess.Board()
+        board.turn = chess.BLACK  #
