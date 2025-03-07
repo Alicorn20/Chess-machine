@@ -18,7 +18,7 @@ EASTER_EGG_MESSAGE = "NIGGERS  NIGGERS  NIGGERS  NIGGERS  NIGGERS  NIGGERS  NIGG
 
 # Funzione per ignorare SIGINT (Ctrl+C)
 def ignore_sigint(signum, frame):
-    print("\nCtrl+C è stato disabilitato. Non puoi uscire così facilmente! 😈")
+    print("\nCtrl+C è stato disabilitato, mi sa che non ci esci da qui...")
 
 # Imposta il gestore del segnale per SIGINT
 signal.signal(signal.SIGINT, ignore_sigint)
