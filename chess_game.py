@@ -186,5 +186,4 @@ def play_human_vs_ai():
         else:
             print("Invalid color, please enter 'w' or 'b'.")
     if color == 'b':
-        board = chess.Board()
-        board.turn = chess.BLACK  #
+        board = chess.
